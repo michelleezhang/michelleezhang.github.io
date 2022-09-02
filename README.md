@@ -21,6 +21,9 @@ This is my personal website!
 * Elements that depend on a class: class-name__dependant-name
 * Modifier that change the style of a class: class-name--modifier-name
 
+** UNITS **
+* em instead of pixels -- allows for easier resizing
+
 # Notes
 An HTML document is divided into two main parts: head and body.
 

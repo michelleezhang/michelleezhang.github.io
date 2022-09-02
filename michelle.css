@@ -15,7 +15,7 @@
 /* GENERAL FORMATTING */ 
 body, html {
     margin: 0;
-    background: #fcfaf8;
+    background: #fcfaf8; 
     font-family: ITC-Avant-Garde-Gothic, Helvetica, Arial, sans-serif; /* font to use (in order of priority) */
     letter-spacing: 0.15em;
     overscroll-behavior: none;  /* browser does nothing when it reaches the end of the scroll (by default, browsers bounce a little when you overscroll) */
@@ -23,7 +23,7 @@ body, html {
 }
 
 h1 {
-    margin:0;
+    margin: 0;
     color: #232320;
     font-family: Ghibli, Playfair Display, serif;
     letter-spacing: 0.1em;
@@ -85,7 +85,7 @@ header {
     display: block;
     z-index: 5;
     content: '';
-    background:pink;
+    background:#FF8B97;
     opacity: 0;
     transform: translate3d(0, 5px, 0);
     transition: all .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -143,7 +143,8 @@ header {
 .big-tile {
     margin: 0 auto;
     max-width: 90%;
-    padding-top: 80px;
+    padding-top: 100px;
+    padding-bottom: 100px;
     position: relative;
     /* z-index:1000; */
     overflow: hidden;
@@ -155,34 +156,35 @@ header {
     position: relative;
     /* z-index: 1000; */
     display: grid;
-    gap: 4em;
-    grid-template-columns: auto auto auto auto;
-    /* grid-template-columns:repeat(1,1fr); */
-    
+    gap: 7em;                                   /* defines space between grid tiles */
+    grid-template-columns:auto auto auto auto;  /* defines size of columns -- determined automatically */
 }
 
 .project-tile {
-    width:100%;
-    border-radius:20px;
-    position:relative;
-    /* transition: all .4s ease-in-out;
-    display:block; */
+    width: 90%;
     padding: 3em 3em 4em;
+    position: relative;
+    display:block; 
+    border-radius: 20px;                    /* defines radius for tile's rounded edges */
+    text-decoration: none;
+    transition: all .4s ease-in-out;        /* transition speed, with ease for smoothness */
 }
 
 .project-tile:hover {
-    text-decoration: none;
+    transform:translate3d(0,-5px,0);            /* translates the tile upwards */
+    box-shadow:0 52px 74px rgba(0,0,0,.12);   /* adds shadow */
+    /* transform: scale(1.01);  // this makes the tile a 1% bit bigger on hover */
 }
 
 .project-tile__category {
     display: block;
     font-family: ITC-Avant-Garde-Gothic, Helvetica, Arial, sans-serif;
     font-size: 14px;
-    opacity: 0.6; 
     text-align: left;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     font-weight: 700;
+    opacity: 0.6; 
 }
 
 .project-tile__title{
@@ -194,25 +196,34 @@ header {
     letter-spacing: -1px;
 }
 
+.project-tile__image-box{
+    margin: 0 auto;
+    max-width: 100%;
+    position: relative;
+    text-align: center;
+}
+
 .project-tile__image {
     position: relative;
     transition: all 0.4s ease-in-out;
     max-width: 100%;
-    display: inline-block
+    display: inline-block;
 }
 
+
+/* set up colors for each tile */
 .project-tile--proj1 {
-    background: pink;
-    color: white;
+    background: linear-gradient(15.03deg,#8DC971 .5%,rgba(230, 255, 205, 0) 80.89%),#ADE4FF;
+    color: #4b3235;
 }
 .project-tile--proj2 {
-    background: green;
-    color: white;
+    background: linear-gradient(180.14deg,#ADBBFF .12%,rgba(20,44,105,0) 70.01%),#4F5C7A;
+    color: #ffffff;
 }
 .project-tile--proj3 {
-    background: blue;
-    color: white;
-}
+    background: linear-gradient(39.4deg,#FAEEAA 0.5%,rgba(182,160,234,0) 48.21%),#EEDAFF;
+    color: #150042;
+} 
 
 
 /* FOOTER */
@@ -227,23 +238,15 @@ footer {
     padding:5em 0;
 }
 
+
 /* MISCELLANEOUS */
 .typewriter::after {
         content: "|";
-        color: pink;
+        color: #FF8B97;
         animation: typewriter 1s infinite step-start;
 }
 @keyframes typewriter {
     50% { 
         opacity: 0; 
     }
-}
-
-.grow {
-    transition: 1s ease;
-}
-.grow:hover{
-    z-index:1200;
-    transform: scale(1.2);
-    transition: 1s ease;
 }
