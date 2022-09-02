@@ -1,15 +1,15 @@
 /* IMPORTS */
 @font-face {
     font-family: ITC-Avant-Garde-Gothic;
-    src:url(/Users/michellezhang/Downloads/fonts/ITC-Avant-Garde-Gothic-LT-Book.ttf) format("truetype");
+    src:url(fonts/ITCAGGothic/ITC-Avant-Garde-Gothic-LT-Book.ttf) format("truetype");
 } 
 @font-face {
     font-family: ITC-Avant-Garde-Gothic-Light;
-    src:url(/Users/michellezhang/Downloads/fonts/ITC-Avant-Garde-Gothic-LT-Extra-Light.ttf) format("truetype");
+    src:url(fonts/ITCAGGothic/ITC-Avant-Garde-Gothic-LT-Extra-Light.ttf) format("truetype");
 } 
 @font-face {
     font-family: Ghibli;
-    src:url(GHIBLI.otf);
+    src:url(fonts/GHIBLI.otf);
 }
 
 /* GENERAL FORMATTING */ 
