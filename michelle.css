@@ -26,16 +26,32 @@ h1 {
     margin: 0;
     color: #232320;
     font-family: Ghibli, Playfair Display, serif;
-    letter-spacing: 0.1em;
     font-size: 3.5em;
+    letter-spacing: 0.1em;
+    line-height: 120%;
+}
+
+h2 {
+    margin: 0;
+    color: #232320;
+    font-family: Ghibli, Playfair Display, serif;
+    font-size: 2.3em;
+    letter-spacing: 0.1em;
     line-height: 120%;
 }
 
 h4 {
+    color:#656270;
     font-family: ITC-Avant-Garde-Gothic-Light, Helvetica, Arial, sans-serif;
+    font-size: 1em;
     line-height: 170%;
 }
 
+a {
+    display: block;
+    color: #232320;
+    text-decoration: none;
+}
 
 /* HEADER: NAV BAR */
 header {
@@ -64,45 +80,35 @@ header {
     overflow: hidden; 
 }
 
-/* set up link coloring and animation */
 .nav-list__link {
     padding: 1.5em 0.75em;
     display: block;
     position: relative;
     z-index: 10;
-    color: #232320;
     font-size: 1.1em;
-    transition: color 0.2s linear;
-    text-decoration: none;
 }
 
-.nav-list__link--p::before, .nav-list__link--f::before, .nav-list__link--a::before, .nav-list__link--c::before {
-    position: absolute;
+.nav-list__link::before {
     width: 100%; 
     height: 3px;
-    left: 0;
     bottom: 15px;
-    display: block;
-    z-index: 5;
-    content: '';
-    background:#FF8B97;
-    opacity: 0;
-    transform: translate3d(0, 5px, 0);
-    transition: all .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    z-index: 10;
+    font-size: 1.1em;
 }
 
 /* adjust angle of rotation for each underline animation */
 .nav-list__link--p:hover::before, .nav-list__link--c:hover::before {
     opacity: 1;
-    transform: translateZ(0) scale3d(1.1, 1.1, 1.1) rotate(-2deg);
+    transform: translateZ(0) scale3d(1.1, 1.1, 1.1) rotate(-2deg)!important;
 }
 .nav-list__link--f:hover::before {
     opacity: 1;
-    transform: translateZ(0) scale3d(1.1, 1.1, 1.1) rotate(1deg);
+    transform: translateZ(0) scale3d(1.1, 1.1, 1.1) rotate(1deg)!important;
 }
 .nav-list__link--a:hover::before {
     opacity: 1;
-    transform: translateZ(0) scale3d(1.1, 1.1, 1.1) rotate(2deg);
+    transform: translateZ(0) scale3d(1.1, 1.1, 1.1) rotate(2deg)!important;
 }
 
 
@@ -127,6 +133,14 @@ header {
     min-width: 0;
     flex: 1;
     flex-basis: auto;
+} 
+@media (max-width: 1130px) { 
+    .flexbox__block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .item__center {
@@ -143,37 +157,64 @@ header {
 .big-tile {
     margin: 0 auto;
     max-width: 90%;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 235px;
     position: relative;
     /* z-index:1000; */
     overflow: hidden;
 }
 
+.big-tile__box {
+    padding: 0;
+    max-width: 100%;
+    margin: 0 auto;
+} 
+@media (min-width: 1130px) {      /* USES MIN WIDTH -- if the screen's width hits 1000px or bigger, move to the side*/
+    .big-tile__box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
 .tile-grid {
     margin: 2em auto 0;
-    max-width: 90%;
+    max-width: 100%;
+    padding-top: 25px;
+    padding-bottom: 100px;
     position: relative;
     /* z-index: 1000; */
     display: grid;
     gap: 7em;                                   /* defines space between grid tiles */
-    grid-template-columns:auto auto auto auto;  /* defines size of columns -- determined automatically */
+    grid-template-columns: auto auto auto auto;  /* defines size of columns -- determined automatically */
+}
+@media (max-width: 1130px) { 
+    .tile-grid {
+        display: grid;
+        gap: 4em; 
+        grid-template-columns: repeat(1,1fr);
+        justify-items: center;
+    }
 }
 
 .project-tile {
     width: 90%;
     padding: 3em 3em 4em;
     position: relative;
-    display:block; 
+    display: block; 
     border-radius: 20px;                    /* defines radius for tile's rounded edges */
     text-decoration: none;
-    transition: all .4s ease-in-out;        /* transition speed, with ease for smoothness */
+    transition: all .3s ease-in-out;        /* transition speed, with ease for smoothness */
+}
+@media (max-width: 1130px) { 
+    .project-tile {
+        width: 150%;
+    }
 }
 
 .project-tile:hover {
-    transform:translate3d(0,-5px,0);            /* translates the tile upwards */
-    box-shadow:0 52px 74px rgba(0,0,0,.12);   /* adds shadow */
-    /* transform: scale(1.01);  // this makes the tile a 1% bit bigger on hover */
+    transform: translate3d(0,-5px,0);            /* translates the tile upwards */
+    box-shadow: 0 52px 74px rgba(0,0,0,.12);   /* adds shadow */
+    /* transform: scale(1.01);  // this makes the tile a bit bigger on hover */
 }
 
 .project-tile__category {
@@ -229,24 +270,68 @@ header {
 /* FOOTER */
 footer {
     position: relative;
-    z-index:1000;
+    z-index: 1000;
 }
 
-.footer__content{
-    max-width:90%;
-    margin:0 auto;
-    padding:5em 0;
+.footer__content {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 20em 0 1em;
+    font-size: 0.8em;
+}
+
+.footer__content--footnote {
+    font-size: 0.1em;
+    max-width: 90%;
+    margin: 0 auto;
+    padding-bottom: 25px;
 }
 
 
 /* MISCELLANEOUS */
+.logo {
+    enable-background: new 0 0 502 502;
+}
+@media (max-width: 800px) {     
+    .logo {
+        transform: scale(0);        /* hides logo when screen is too small */
+    }
+}
+
 .typewriter::after {
-        content: "|";
-        color: #FF8B97;
-        animation: typewriter 1s infinite step-start;
+    content: "|";
+    color: #FF8B97;
+    animation: typewriter 1s infinite step-start;
 }
 @keyframes typewriter {
-    50% { 
-        opacity: 0; 
-    }
+50% { 
+    opacity: 0; 
+}
+}
+
+
+/* reorganize !! */
+
+.underline-link {
+    transition: color 0.2s linear;
+}
+
+.underline-link::before {
+    position: absolute;
+    /* width: 100%; 
+    height: 3px; */
+    left: 0;
+    /* bottom: 15px; */
+    display: block;
+    z-index: 5;
+    content: '';
+    background:#FF8B97;
+    opacity: 0;
+    transform: translate3d(0, 5px, 0);
+    transition: all .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.underline-link:hover::before {
+    opacity: 1;
+    transform: translateZ(0) scale3d(1.1, 1.1, 1.1) rotate(-2deg);
 }

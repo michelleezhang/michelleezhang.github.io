@@ -3,12 +3,21 @@ This is my personal website!
 
 # Style Guide
 ** COLORS **
-* Purple:
-* Cream:
-* Green:
-* Pink:
-* Black: #232320
-* White:
+General: purple, cream, green, blue, pink, yellow
+* Background
+- Cream:
+* Text
+- "Black": #232320
+- "White": 
+* Hyperlink effects
+- Sheeta (pink): #FF8B97  (may be changed)
+* Project tile gradient
+- Castle in the Sky (bright green): #8DC971
+- Sen to Chihiro (bright blue): #ADE4FF
+- Sophie in the Rain (dark blue): #4F5C7A
+- Haku (bright blue-purple): #ADBBFF
+- Cat Eyes (light yellow): #FAEEAA
+- Chihiro (bright lavender): #EEDAFF
 
 ** FONTS **
 * Titles: Ghibli by Eyad Al-Samman
@@ -46,14 +55,26 @@ Tags used include:
 * Header
 - The header contains the navigation bar, which is formatted as an unordered list (ul) -- this is a nicer way to format things
 
+* Padding syntax: top right bottom left OR top right/left bottom OR top/bottom right/left OR top/bottom/right/left
+
+
 
 
 # In Progress
+* High priority
 - Projects
 - About
 - Contact
 - Fun!
-- 404 design
-- Modification for mobile device compatibility
-- JS animation 
 - Linking pages together
+
+* Mid priority
+- Modification for mobile device compatibility 
+
+* Low priorty
+- 404 design
+- JS animations !! 
+- Homepage tweaks
+    - Smooth transition when squashing home image
+    - Project grid that rotates ?
+    - "+" link under grid and organize link underline code
