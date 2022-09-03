@@ -235,31 +235,30 @@ header {
 .project-tile--proj3:hover {
     background: linear-gradient(39.4deg,#FAEEAA 0.5%,rgba(182,160,234,0) 48.21%),#EEDAFF;
     color: #150042;
-} 
+}
 
 .project-tile__content-box {
-    opacity: 1; 
     margin: 0 auto; 
-    max-width: 100%; 
     position: relative;
+    opacity: 1; 
+    max-width: 100%; 
     text-align: center;
     /* 
-    width:992px; 
+    width:992px;
     height:125px; 
     */
 }
 
 .project-tile__image, .project-tile__text {
-    position: relative;
-    transition: all 0.4s ease-in-out;
+    /* position: absolute; */
     max-width: 100%;
-    display: inline-block;
     transition: all 0.4s ease-in-out;
+    display: inline-block;
 }
 
 .project-tile__text {
-    /* position: absolute;  */
-    /* top:0; 
+    /* position: absolute; 
+    top:0; 
     left:0;  */
     opacity:0;
 }
@@ -408,3 +407,61 @@ footer {
     opacity: 1;
     transform: translateZ(0) scale3d(1.1, 1.1, 1.1) rotate(-2deg);
 }
+
+
+
+.form {
+    transition: all .4s ease-in-out;
+}
+
+.contact-form__input {
+    margin: 7px auto;
+    width: 50%;
+    height: 30px;
+    padding: 12px 15px;
+    font-size: 18px;
+    border: 1.5px dashed #FF8B97;
+    border-radius: 20px;
+    /* background: transparent; */
+ }
+
+ .contact-form__message {
+    font-size: 16px;
+    display: block;
+    box-sizing: border-box;
+    width: 53%;
+    min-height: 110px;
+    margin: 15px auto;
+    resize: vertical;
+    outline: none;
+ }
+
+ .contact-form__submit {
+    margin: 15px auto;
+    padding: 30px;
+    width: 25%;
+    border-color: transparent;
+    border-radius: 20px;
+    background: pink;
+
+ }
+
+ .contact-form__submit:hover {
+    background: #FF8B97;
+
+ }
+
+
+ 
+/* 
+
+
+form .submit:hover {
+    background: green;
+    cursor: pointer;
+} */
+
+
+
+
+

@@ -61,15 +61,16 @@ Tags used include:
 
 
 # In Progress
-* High priority
-- Projects
+* High priority 
 - About
 - Contact
 - Fun!
+- Finalize project tile image-description fade
 - Linking pages together
 
 * Mid priority
 - Modification for mobile device compatibility 
+- Prev and next page arrows
 
 * Low priorty
 - 404 design
@@ -78,3 +79,5 @@ Tags used include:
     - Smooth transition when squashing home image
     - Project grid that rotates ?
     - "+" link under grid and organize link underline code
+- Organize all html and css into global and local
+- Organize files

@@ -8,7 +8,7 @@
     <meta name="description" content="This is Michelle's webpage. Click if you dare.">
     <meta name="keywords" content="Michelle Zhang computer science chemistry design Chicago Northwestern">
     
-    <title> about </title>
+    <title> contact </title>
 
     <link rel="preload" href="fonts/GHIBLI.otf" type="font/otf" as="font" crossorigin="anonymous">
     <link rel="preload" href="fonts/ITCAGGothic/ITC-Avant-Garde-Gothic-LT-Book.ttf" type="truetype" as="font" crossorigin="anonymous">
@@ -66,21 +66,53 @@
         <div class="big-tile__box">
             <div class="flexbox__block" style="text-align:center">
                 <h1 class="typewriter"> 
-                    about
+                    contact
                 </h1>
                 <h4> 
-                    Hello!
+                    Let's talk!
                 </h4>
             </div>
         </div> 
     </section>
+
+    <!-- contact info -->
+    <section class="big-tile">
+        <div class="flexbox__block">
+            <h3 style="text-align:center">send a message</h2>
+            <br /> <br />
+        </div>
+        <!-- <div class="big-tile__box"> -->
+            <div class="flexbox__block" style="text-align:center">
+
+                <div class="contact-form__box">
+                    <form id="contact-form" method="post" action="contact.php">
+                        <input name="name" type="text" class="contact-form__input" placeholder="your name" required>
+                        <input name="email" type="email" class="contact-form__input" placeholder="your email" required>
+                        <textarea name="message" class="contact-form__input contact-form__message" placeholder="your message" row="4" required></textarea>
+                        <button class="contact-form__submit" type="submit"> <h3>send message</h3> </button>
+
+
+
+                    <!-- 
+
+                        <input type="submit" class="contact-form submit" value="send message"> -->
+
+                </form>
+            </div>
+        <!-- </div> -->
+
+
+
+        </div>
+    </section>
+    
 
     <footer>
         <div class="footer__content">
             <p style="text-align:center"> Thanks for stopping by! </p>
         </div>
         <div class="footer__content--footnote">
-            <p> who built this website? obviously <a style="display: inline-block; text-decoration: underline" href="about.html"> someone really fun and cool</a>... </p>
+            <p> wondering built this website? obviously <a style="display: inline-block; text-decoration: underline" href="about.html"> someone really fun and cool</a>... </p>
         </div>
     </footer>
 </body>
