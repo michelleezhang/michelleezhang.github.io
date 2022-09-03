@@ -23,7 +23,7 @@
         <nav class="nav-bar">
             <ul class="nav-list flexbox">
                 <li class="nav-list__item flexbox__item item__center">
-                    <a class="nav-list__link" aria-label="Home" href="https://michelleezhang.github.io/"> <!-- aria label is text that can be read by assistive tech -->
+                    <a class="nav-list__link" aria-label="Home" href="index.html"> <!-- aria label is text that can be read by assistive tech -->
                         <svg class="logo" xmlns="http://www.w3.org/2000/svg" width="25" height="25" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 502 502" xml:space="preserve">
                             <g> 
                                 <g> <path style="fill:#FF1D25;" d="M370.994,49.998c-61.509,0-112.296,45.894-119.994,105.306    c-7.698-59.412-58.485-105.306-119.994-105.306C64.176,49.998,10,104.174,10,171.004s80.283,135.528,116.45,166.574    C160.239,366.582,251,452.002,251,452.002s90.761-85.42,124.55-114.424C411.717,306.532,492,237.834,492,171.004    S437.824,49.998,370.994,49.998z"/>
@@ -36,13 +36,13 @@
                     </a> 
                 </li>
                 <li class="nav-list__item flexbox__item"> 
-                    <a class="nav-list__link underline-link nav-list__link--p" href="#">Projects</a> 
+                    <a class="nav-list__link underline-link nav-list__link--p" href="projects.html">Projects</a> 
                 </li>
                 <li class="nav-list__item flexbox__item"> 
                     <a class="nav-list__link underline-link nav-list__link--f" href="#">Fun</a> 
                 </li>
                 <li class="nav-list__item flexbox__item"> 
-                    <a class="nav-list__link underline-link nav-list__link--a" href="#">About</a> 
+                    <a class="nav-list__link underline-link nav-list__link--a" href="about.html">About</a> 
                 </li>
                 <li class="nav-list__item flexbox__item"> 
                     <a class="nav-list__link underline-link nav-list__link--c" href="#">Contact</a> 
@@ -64,50 +64,60 @@
     <!-- title card -->
     <section class="big-tile">
         <div class="big-tile__box">
-            <div class="flexbox__block">
+            <div class="flexbox__block" style="text-align:center">
                 <h1 class="typewriter"> 
-                    hi! i'm michelle.
+                    projects
                 </h1>
                 <h4> 
-                    I study computer science and chemistry at Northwestern University. 
-                    <br />
-                    <!-- I like to build things — check out my projects to see what I'm working on now :)
-                    <br /> <br /> -->
-                    This site is under construction! Don't click any links!*
-                    <!-- If you have any ideas for improvement, I'd love to hear them! -->
+                    Here's a collection of stuff I've done / am working on.
                 </h4>
-                <br />
-                <p> *Well... I guess you CAN, but they don't go anywhere :/ </p>
-                <br />
-            </div>
-            <div class="flexbox__block">
-                <img width="300" src="placeholderImages/PLACEHOLDER.png" alt="image of ..." /> 
             </div>
         </div> 
     </section>
 
-    <!-- projects grid -->
+    <!-- project grid -->
     <section class="big-tile">
-        <div class="big-tile__box">
-            <div class="flexbox__block">
-                <h2 style="text-align:center">featured projects</h2>
-            </div>
-        </div>
-
         <div class="flexbox__block">
             <div class="tile-grid">
+
+
                 <a class="project-tile project-tile--proj1" href="#">
                     <span class="project-tile__category">Website</span>
                     <h2 class="project-tile__title">Project 1</h2>
-                    <div class="project-tile__image-box">
-                        <img class="project-tile__image" src="placeholderImages/PLACEHOLDER.png" height="50" alt="Project 1">
+
+                    
+                    <div id="project-tile__content-box">
+                        <img src="placeholderImages/dog.png" class="project-tile__image" />
+                        <div class="project-tile__text">
+                            I'm a description
+                            fdksjfkjsdf
+                            dfksjdfdf
+                            fkdjfkdsf
+                            fjkdjfs
+                        </div>
+                    </div> 
+
+                    
+
+                    <!-- <div class="project-tile__image-box">
+                        <img class="project-tile__image" src="placeholderImages/dog.png" width="100%" alt="Project 1">
                     </div>
+
+                    <div class="project-tile__descrip-box">
+                        <p>heyyyyyy descrippp
+           
+                        </p>
+                    </div> -->
+
                 </a>
+
+
+             
                 <a class="project-tile project-tile--proj2" href="#">
                     <span class="project-tile__category">Website</span>
                     <h2 class="project-tile__title">Project 2</h2>
                     <div class="project-tile__image-box">
-                        <img class="project-tile__image" src="placeholderImages/PLACEHOLDER.png" height="50" alt="Project 1">
+                        <img class="project-tile__image" src="placeholderImages/dog.png" width="100%" alt="Project 1">
                     </div>
                 </a>
                 <a class="project-tile project-tile--proj3" href="#">
@@ -117,13 +127,11 @@
                         <img class="project-tile__image" src="placeholderImages/PLACEHOLDER.png" height="50" alt="Project 1">
                     </div>
                 </a>
-            </div>  
+
+
+
+            </div>
         </div>
-    <!-- <div class="big-tile__box">
-        <div class="link-box---center">
-            <a class="underline-link" href="#"><h3 style="text-align:center"> More </h3></a>
-        </div>
-    </div> -->
     </section>
 
     <footer>
@@ -131,7 +139,7 @@
             <p style="text-align:center"> Thanks for stopping by! </p>
         </div>
         <div class="footer__content--footnote">
-            <p> who built this website? obviously <a style="display: inline-block; text-decoration: underline" href="#"> someone really fun and cool</a>... </p>
+            <p> wondering built this website? obviously <a style="display: inline-block; text-decoration: underline" href="about.html"> someone really fun and cool</a>... </p>
         </div>
     </footer>
 </body>

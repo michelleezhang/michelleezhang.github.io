@@ -160,7 +160,7 @@ header {
     padding-top: 235px;
     position: relative;
     /* z-index:1000; */
-    overflow: hidden;
+    overflow: visible; /* used to be hidden */
 }
 
 .big-tile__box {
@@ -184,8 +184,8 @@ header {
     position: relative;
     /* z-index: 1000; */
     display: grid;
-    gap: 7em;                                   /* defines space between grid tiles */
-    grid-template-columns: auto auto auto auto;  /* defines size of columns -- determined automatically */
+    gap: 2em;                                   /* defines space between grid tiles */
+    grid-template-columns: repeat(3, 1fr);      /* grid with 3 columns of equal width, and grid layout will by default make all items in each row equal height. */
 }
 @media (max-width: 1130px) { 
     .tile-grid {
@@ -197,17 +197,24 @@ header {
 }
 
 .project-tile {
-    width: 90%;
+    width: 66%;
     padding: 3em 3em 4em;
     position: relative;
     display: block; 
     border-radius: 20px;                    /* defines radius for tile's rounded edges */
+    background: white;
+    color: #4b3235;
     text-decoration: none;
     transition: all .3s ease-in-out;        /* transition speed, with ease for smoothness */
 }
 @media (max-width: 1130px) { 
     .project-tile {
-        width: 150%;
+        width: 170%;
+    }
+}
+@media (max-width: 550px) { 
+    .project-tile {
+        width: 130%;
     }
 }
 
@@ -216,6 +223,101 @@ header {
     box-shadow: 0 52px 74px rgba(0,0,0,.12);   /* adds shadow */
     /* transform: scale(1.01);  // this makes the tile a bit bigger on hover */
 }
+
+.project-tile--proj1:hover {
+    background: linear-gradient(15.03deg,#8DC971 .5%,rgba(230, 255, 205, 0) 80.89%),#ADE4FF;
+    color: #4b3235;
+}
+.project-tile--proj2:hover {
+    background: linear-gradient(180.14deg,#ADBBFF .12%,rgba(20,44,105,0) 70.01%),#4F5C7A;
+    color: #ffffff;
+}
+.project-tile--proj3:hover {
+    background: linear-gradient(39.4deg,#FAEEAA 0.5%,rgba(182,160,234,0) 48.21%),#EEDAFF;
+    color: #150042;
+} 
+
+.project-tile__content-box {
+    opacity: 1; 
+    margin: 0 auto; 
+    max-width: 100%; 
+    position: relative;
+    text-align: center;
+    /* 
+    width:992px; 
+    height:125px; 
+    */
+}
+
+.project-tile__image, .project-tile__text {
+    position: relative;
+    transition: all 0.4s ease-in-out;
+    max-width: 100%;
+    display: inline-block;
+    transition: all 0.4s ease-in-out;
+}
+
+.project-tile__text {
+    /* position: absolute;  */
+    /* top:0; 
+    left:0;  */
+    opacity:0;
+}
+
+.project-tile:hover .project-tile__image {
+    opacity: 0;
+}
+
+.project-tile:hover .project-tile__text {
+    opacity: 1;
+}
+
+
+/* .
+.project-tile__image-box{
+    opacity: 1; 
+    margin: 0 auto; 
+    max-width: 100%; 
+    position: relative;
+    text-align: center;
+}
+
+.project-tile__descrip-box {
+    opacity: 0;
+} */
+
+/* .project-tile:hover .project-tile__image-box {
+    max-height: 0px;
+    opacity: 0;
+} */
+
+
+/* .project-tile:hover .project-tile__descrip-box {
+    margin: 0 auto;
+    max-width: 100%;
+    position: relative;
+    text-align: center; 
+} */
+
+/* 
+.project-tile__image {
+    position: relative;
+    transition: all 0.4s ease-in-out;
+    max-width: 100%;
+    display: inline-block;
+}
+
+.project-tile__description {
+    display: none;
+    opacity: 1;
+    color: black;
+} 
+
+*/
+
+
+
+
 
 .project-tile__category {
     display: block;
@@ -236,35 +338,6 @@ header {
     font-size: 40px;
     letter-spacing: -1px;
 }
-
-.project-tile__image-box{
-    margin: 0 auto;
-    max-width: 100%;
-    position: relative;
-    text-align: center;
-}
-
-.project-tile__image {
-    position: relative;
-    transition: all 0.4s ease-in-out;
-    max-width: 100%;
-    display: inline-block;
-}
-
-
-/* set up colors for each tile */
-.project-tile--proj1 {
-    background: linear-gradient(15.03deg,#8DC971 .5%,rgba(230, 255, 205, 0) 80.89%),#ADE4FF;
-    color: #4b3235;
-}
-.project-tile--proj2 {
-    background: linear-gradient(180.14deg,#ADBBFF .12%,rgba(20,44,105,0) 70.01%),#4F5C7A;
-    color: #ffffff;
-}
-.project-tile--proj3 {
-    background: linear-gradient(39.4deg,#FAEEAA 0.5%,rgba(182,160,234,0) 48.21%),#EEDAFF;
-    color: #150042;
-} 
 
 
 /* FOOTER */
