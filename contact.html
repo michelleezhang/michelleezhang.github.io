@@ -38,9 +38,9 @@
                 <li class="nav-list__item flexbox__item"> 
                     <a class="nav-list__link underline-link nav-list__link--p" href="projects.html">Projects</a> 
                 </li>
-                <li class="nav-list__item flexbox__item"> 
+                <!-- <li class="nav-list__item flexbox__item"> 
                     <a class="nav-list__link underline-link nav-list__link--f" href="fun.html">Fun</a> 
-                </li>
+                </li> -->
                 <li class="nav-list__item flexbox__item"> 
                     <a class="nav-list__link underline-link nav-list__link--a" href="about.html">About</a> 
                 </li>
@@ -75,37 +75,25 @@
         </div> 
     </section>
 
-    <!-- contact info -->
+
     <section class="big-tile">
         <div class="flexbox__block">
             <h3 style="text-align:center">send a message</h2>
             <br /> <br />
         </div>
-        <!-- <div class="big-tile__box"> -->
+
             <div class="flexbox__block" style="text-align:center">
 
                 <div class="contact-form__box">
-                    <form id="contact-form" method="post" action="contact.php">
+                    <form id="contact-form" method="POST" action="https://formspree.io/f/mjvzgkeo">
                         <input name="name" type="text" class="contact-form__input" placeholder="your name" required>
                         <input name="email" type="email" class="contact-form__input" placeholder="your email" required>
                         <textarea name="message" class="contact-form__input contact-form__message" placeholder="your message" row="4" required></textarea>
-                        <button class="contact-form__submit" type="submit"> <h3>send message</h3> </button>
-
-
-
-                    <!-- 
-
-                        <input type="submit" class="contact-form submit" value="send message"> -->
-
+                        <button class="contact-form__submit" type="submit">submit</button>
                 </form>
             </div>
-        <!-- </div> -->
-
-
-
         </div>
-    </section>
-    
+    </section> 
 
     <footer>
         <div class="footer__content">
