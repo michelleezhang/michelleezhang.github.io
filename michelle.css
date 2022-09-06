@@ -298,6 +298,10 @@ header {
     background: linear-gradient(180.14deg,#ADBBFF .12%,rgba(20,44,105,0) 70.01%),#4F5C7A;
     color: #ffffff;
 }
+/* temp fix: just changed h4 color separately on hover... todo: figure out how to change it more smoothly */
+.project-tile--proj2:hover h4{
+    color: #ffffff;
+}
 .project-tile--proj3:hover {
     background: linear-gradient(39.4deg,#FAEEAA 0.5%,rgba(182,160,234,0) 48.21%),#EEDAFF;
     color: #150042;
