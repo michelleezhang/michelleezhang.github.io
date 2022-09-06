@@ -12,10 +12,11 @@
     src:url(fonts/GHIBLI.otf);
 }
 
-/* GENERAL FORMATTING */ 
+/* TEXTS */ 
 body, html {
     margin: 0;
     background: #fcfaf8; 
+    color: #232320;
     font-family: ITC-Avant-Garde-Gothic, Helvetica, Arial, sans-serif; /* font to use (in order of priority) */
     letter-spacing: 0.15em;
     overscroll-behavior: none;  /* browser does nothing when it reaches the end of the scroll (by default, browsers bounce a little when you overscroll) */
@@ -23,8 +24,6 @@ body, html {
 }
 
 h1 {
-    margin: 0;
-    color: #232320;
     font-family: Ghibli, Playfair Display, serif;
     font-size: 3.5em;
     letter-spacing: 0.1em;
@@ -32,8 +31,6 @@ h1 {
 }
 
 h2 {
-    margin: 0;
-    color: #232320;
     font-family: Ghibli, Playfair Display, serif;
     font-size: 2.3em;
     letter-spacing: 0.1em;
@@ -53,7 +50,69 @@ a {
     text-decoration: none;
 }
 
-/* HEADER: NAV BAR */
+
+/* SECTIONS */
+/* a simple centered, spaced out flexbox -- used in nav bar */
+.flexbox {
+    /* box-sizing: border-box; */
+   display: flex;                      /* defines our flexbox class as something flexy :) */
+   justify-content: space-between;     /* justify is for horizontal alignment. here, flex items are displayed with spaces inbetween */
+   align-items: center;                /* align is for vertical alignment. here, flex items are aligned to the center of the flexbox */
+}
+
+/* stuff that goes inside the flex parent */
+.flexbox__item {
+    /* box-sizing:border-box; */
+    max-width: 100%; 
+    min-width: 0;
+ }
+
+ /* formats big sections of the page */
+ .big-tile {
+    margin: 0 auto;
+    max-width: 90%;
+    padding-top: 235px;
+    position: relative;
+    overflow: visible; /* used to be hidden */
+}
+
+
+/* for two column layouts */
+
+/* parent div to hold the flex block columns */
+.big-tile__box {
+    padding: 0;
+    max-width: 100%;
+    margin: 0 auto;
+} 
+@media (min-width: 1130px) {      /* USES MIN WIDTH -- if the screen's width hits 1000px or bigger, move to the side*/
+    .big-tile__box {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+    }
+}
+
+/* squishable flex block column child */
+.flexbox__block {
+   /* box-sizing:border-box; */
+   max-width: 100%;
+   min-width: 0;
+   flex: 1;
+   align-content: flex-start;
+   flex-basis: auto;
+} 
+@media (max-width: 1130px) { 
+   .flexbox__block {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+   }
+}
+
+
+/* HEADER */
 header {
     display: block;         /* a "block" element starts on a new line and takes up the available screen width */
     background: #fefaf6;  /* bg color is needed because otherwise, the header is transparent */
@@ -68,8 +127,6 @@ header {
 .nav-bar {
     margin: 0 auto;        /* top and bottom margins are set to 0, browser determines left and right margins by itself */
     width: 100%;
-    /* max-width: 1600 px;
-    position: relative; */
 } 
 
 .nav-list {
@@ -111,78 +168,26 @@ header {
     transform: translateZ(0) scale3d(1.1, 1.1, 1.1) rotate(2deg)!important;
 }
 
-
-/* FLEX BOX */
-/* used in: nav bar (header) */
-.flexbox {
-     /* box-sizing: border-box; */
-    display: flex;                      /* defines our flexbox class as something flexy :) */
-    justify-content: space-between;     /* justify is for horizontal alignment. here, flex items are displayed with spaces inbetween */
-    align-items: center;                /* align is for vertical alignment. here, flex items are aligned to the center of the flexbox */
-}
-
-.flexbox__item {
-    /* box-sizing:border-box; */
-    max-width: 100%; 
-    min-width: 0;
-}
-
-.flexbox__block {
-    /* box-sizing:border-box; */
-    max-width: 100%;
-    min-width: 0;
-    flex: 1;
-    flex-basis: auto;
-} 
-@media (max-width: 1130px) { 
-    .flexbox__block {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-}
-
+/* special orientations */
+/* used to center the logo */
 .item__center {
     position: absolute;
     left: 50%;
 }
-
+/* used to space apart the social buttons */
 .item__auto-left-margin {
     margin-left: auto!important;        /* important will override existing styling for this property */
 }
 
 
-/* TILES */
-.big-tile {
-    margin: 0 auto;
-    max-width: 90%;
-    padding-top: 235px;
-    position: relative;
-    /* z-index:1000; */
-    overflow: visible; /* used to be hidden */
-}
 
-.big-tile__box {
-    padding: 0;
-    max-width: 100%;
-    margin: 0 auto;
-} 
-@media (min-width: 1130px) {      /* USES MIN WIDTH -- if the screen's width hits 1000px or bigger, move to the side*/
-    .big-tile__box {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-}
-
+/* GALLERY */
 .tile-grid {
     margin: 2em auto 0;
     max-width: 100%;
     padding-top: 25px;
     padding-bottom: 100px;
     position: relative;
-    /* z-index: 1000; */
     display: grid;
     gap: 2em;                                   /* defines space between grid tiles */
     grid-template-columns: repeat(3, 1fr);      /* grid with 3 columns of equal width, and grid layout will by default make all items in each row equal height. */
@@ -197,32 +202,93 @@ header {
 }
 
 .project-tile {
-    width: 66%;
-    padding: 3em 3em 4em;
+    width: 100%;
+    /* padding: 3em; */
     position: relative;
-    display: block; 
-    border-radius: 20px;                    /* defines radius for tile's rounded edges */
-    background: white;
-    color: #4b3235;
+    display: inline-block; /* used to be block */ 
+    border-radius: 20px;         /* defines radius for tile's rounded edges */
     text-decoration: none;
     transition: all .3s ease-in-out;        /* transition speed, with ease for smoothness */
+    /* height: max-content; */
 }
 @media (max-width: 1130px) { 
     .project-tile {
-        width: 170%;
+        width: 70%;
     }
 }
 @media (max-width: 550px) { 
     .project-tile {
-        width: 130%;
+        width: 100%;
     }
+} 
+
+.project-tile__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    float: left;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+
+
+.project-tile__content-box {
+    float: left;
+    margin: 3em;
+    max-width: 90%; 
+}
+
+.project-tile__category {
+    display: inline-block;
+    font-family: ITC-Avant-Garde-Gothic, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    opacity: 0.6; 
+}
+
+.project-tile__languages {
+    display: inline-block;
+    font-family: ITC-Avant-Garde-Gothic, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    text-align: right;
+    text-transform: upper;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    opacity: 0.6; 
+}
+
+.project-tile__title{
+    margin-bottom: 1em;
+    display: block;
+    text-align: left;
+    font-family: Ghibli, Playfair Display, serif;
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+
+.project-tile__text {
+    opacity: 0;
 }
 
 .project-tile:hover {
-    transform: translate3d(0,-5px,0);            /* translates the tile upwards */
-    box-shadow: 0 52px 74px rgba(0,0,0,.12);   /* adds shadow */
-    /* transform: scale(1.01);  // this makes the tile a bit bigger on hover */
-}
+    transform: translate3d(0,-5px,0);                /* translates the tile upwards */
+    box-shadow: 0 52px 74px rgba(0,0,0,.12);       /* adds shadow */
+} 
+.project-tile:hover .project-tile__image {
+    opacity: 0;
+    z-index: -2;
+} 
+
+.project-tile:hover .project-tile__text {
+    opacity: 1;
+} 
 
 .project-tile--proj1:hover {
     background: linear-gradient(15.03deg,#8DC971 .5%,rgba(230, 255, 205, 0) 80.89%),#ADE4FF;
@@ -237,106 +303,29 @@ header {
     color: #150042;
 }
 
-.project-tile__content-box {
-    margin: 0 auto; 
-    position: relative;
-    opacity: 1; 
-    max-width: 100%; 
-    text-align: center;
-    /* 
-    width:992px;
-    height:125px; 
-    */
-}
-
-.project-tile__image, .project-tile__text {
-    /* position: absolute; */
-    max-width: 100%;
-    transition: all 0.4s ease-in-out;
+.button-link {
     display: inline-block;
-}
-
-.project-tile__text {
-    /* position: absolute; 
-    top:0; 
-    left:0;  */
-    opacity:0;
-}
-
-.project-tile:hover .project-tile__image {
-    opacity: 0;
-}
-
-.project-tile:hover .project-tile__text {
-    opacity: 1;
+    padding: 0.2em;
+    border-radius: 20px;
+    background: white;
+    text-decoration: none;
 }
 
 
-/* .
-.project-tile__image-box{
-    opacity: 1; 
-    margin: 0 auto; 
-    max-width: 100%; 
-    position: relative;
-    text-align: center;
-}
-
-.project-tile__descrip-box {
-    opacity: 0;
-} */
-
-/* .project-tile:hover .project-tile__image-box {
-    max-height: 0px;
-    opacity: 0;
-} */
-
-
-/* .project-tile:hover .project-tile__descrip-box {
-    margin: 0 auto;
-    max-width: 100%;
-    position: relative;
-    text-align: center; 
-} */
-
-/* 
-.project-tile__image {
-    position: relative;
-    transition: all 0.4s ease-in-out;
-    max-width: 100%;
-    display: inline-block;
-}
-
-.project-tile__description {
-    display: none;
-    opacity: 1;
-    color: black;
-} 
-
-*/
 
 
 
 
 
-.project-tile__category {
-    display: block;
-    font-family: ITC-Avant-Garde-Gothic, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    text-align: left;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-weight: 700;
-    opacity: 0.6; 
-}
 
-.project-tile__title{
-    margin-bottom: 1em;
-    display: block;
-    text-align: left;
-    font-family: Ghibli, Playfair Display, serif;
-    font-size: 40px;
-    letter-spacing: -1px;
-}
+
+
+
+
+
+
+
+
 
 
 /* FOOTER */
