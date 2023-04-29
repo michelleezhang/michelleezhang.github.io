@@ -1,23 +1,39 @@
 /* IMPORTS */
 @font-face {
-    font-family: ITC-Avant-Garde-Gothic;
+    font-family: Avant-Garde-Gothic; 
     src:url(fonts/ITCAGGothic/ITC-Avant-Garde-Gothic-LT-Book.ttf) format("truetype");
+    font-weight: normal;
 } 
 @font-face {
-    font-family: ITC-Avant-Garde-Gothic-Light;
+    font-family: Avant-Garde-Gothic-W;
     src:url(fonts/ITCAGGothic/ITC-Avant-Garde-Gothic-LT-Extra-Light.ttf) format("truetype");
+    font-weight: light;
+} 
+@font-face {
+    font-family: Avant-Garde-Gothic-W;
+    src:url(fonts/ITCAGGothic/ITC-Avant-Garde-Gothic-LT-Demi.ttf) format("truetype");
+    font-weight: bold;
 } 
 @font-face {
     font-family: Ghibli;
     src:url(fonts/GHIBLI.otf);
 }
+@font-face {
+    font-family: Coding;
+    src:url(fonts/Nanum_Gothic_Coding/NanumGothicCoding-Regular.ttf);
+}
+@font-face {
+    font-family: Zen-Gothic;
+    src:url(fonts/Zen_Kaku_Gothic_Antique/ZenKakuGothicAntique-Regular.ttf);
+}
+
 
 /* TEXTS */ 
 body, html {
     margin: 0;
     background: #fcfaf8; 
     color: #232320;
-    font-family: ITC-Avant-Garde-Gothic, Helvetica, Arial, sans-serif; /* font to use (in order of priority) */
+    font-family: Avant-Garde-Gothic, Helvetica, Arial, sans-serif; /* font to use (in order of priority) */
     letter-spacing: 0.15em;
     overscroll-behavior: none;  /* browser does nothing when it reaches the end of the scroll (by default, browsers bounce a little when you overscroll) */
     overflow-x: hidden;         /* if there is overflow onscreen, clip it off. we use overflow-x only so we can still scroll down */
@@ -37,11 +53,17 @@ h2 {
     line-height: 120%;
 }
 
+h3 {
+    letter-spacing: 0.1em;
+    line-height: 150%;
+}
+
 h4 {
-    color:#656270;
-    font-family: ITC-Avant-Garde-Gothic-Light, Helvetica, Arial, sans-serif;
-    font-size: 1em;
-    line-height: 170%;
+    color:#232320;
+    font-family: Avant-Garde-Gothic-W, Helvetica, Arial, sans-serif;
+    font-size: 1.2em;
+    line-height: 150%;
+    font-weight: 300;
 }
 
 a {
@@ -49,12 +71,31 @@ a {
     color: #232320;
     text-decoration: none;
 }
+a:hover {
+    color: #FF8B97; /* Set the link color on hover */
+  }
+
+/* IMAGES */
+.profile-image {
+    border-radius: 50%; /* Set border-radius to 50% to create a circular shape */
+    overflow: hidden; /* Hide any overflow from the circular container */
+}
+@media (min-width: 1300px) { /* normal screen */
+    .profile-image {
+        margin-right: 100px;
+        margin-left: 50px;
+    }
+}
+@media (max-width: 1300px) { /* narrow screen */
+    .profile-image {
+        margin-top: 30px;
+    }
+}
 
 
 /* SECTIONS */
 /* a simple centered, spaced out flexbox -- used in nav bar */
 .flexbox {
-    /* box-sizing: border-box; */
    display: flex;                      /* defines our flexbox class as something flexy :) */
    justify-content: space-between;     /* justify is for horizontal alignment. here, flex items are displayed with spaces inbetween */
    align-items: center;                /* align is for vertical alignment. here, flex items are aligned to the center of the flexbox */
@@ -62,7 +103,6 @@ a {
 
 /* stuff that goes inside the flex parent */
 .flexbox__item {
-    /* box-sizing:border-box; */
     max-width: 100%; 
     min-width: 0;
  }
@@ -85,7 +125,7 @@ a {
     max-width: 100%;
     margin: 0 auto;
 } 
-@media (min-width: 1130px) {      /* USES MIN WIDTH -- if the screen's width hits 1000px or bigger, move to the side*/
+@media (min-width: 1300px) {      /* USES MIN WIDTH -- if the screen's width hits 1000px or bigger, move to the side*/
     .big-tile__box {
         display: flex;
         align-items: flex-start;
@@ -102,11 +142,12 @@ a {
    align-content: flex-start;
    flex-basis: auto;
 } 
-@media (max-width: 1130px) { 
+@media (max-width: 1300px) { 
    .flexbox__block {
        display: flex;
        flex-direction: column;
        align-items: center;
+       text-align: center;
        justify-content: center;
    }
 }
@@ -319,19 +360,6 @@ header {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* FOOTER */
 footer {
     position: relative;
@@ -400,7 +428,9 @@ footer {
     opacity: 1;
     transform: translateZ(0) scale3d(1.1, 1.1, 1.1) rotate(-2deg);
 }
-
+.underline-link:hover {
+    color: #232320; /* keep link color the same on hover if we're underlining */
+}
 
 
 .form {
@@ -444,53 +474,6 @@ footer {
  .contact-form__submit:hover {
     background: #FF8B97;
  }
-
- .profile-card {
-    padding: 50px;
-    width: 35%;
-    border-radius: 20px;
-    background: linear-gradient(6.03deg,#dacdff .5%,rgba(218,205,255,0) 46.89%),#ffeaee;
- }
-
- .profile-card img {
-    max-width: 100%;
-    transition: all 0.4s ease-in-out;
-    display: inline-block;
- }
-
-.profile-card h2 {
-    font-family: courier;
-    color: #333;
-    text-align: center;
-    margin: 0 auto;
-    padding-bottom: 25px;
-    font-size: 20pt;
-}
-
-.profile-card h3 {
-    font-family: courier;
-    color: #333;
-    text-align: center;
-    margin: 0 auto;
-    padding-bottom: 25px;
-    font-size: 15pt;
-}
-
-.profile-card ul {
-    padding: 30px 0;
-    margin: 0 auto;
-    list-style: none;
-    font-size: 15px;
-    line-height: 28px;
-}
-
-.bubble-list li {
-    display: inline;
-    background: white;
-    border-radius: 17px;
-    margin: 15px 3px;
-    padding: 10px;
-}
 
 /* 
 .card {

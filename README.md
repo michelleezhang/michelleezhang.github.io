@@ -1,6 +1,17 @@
 # michelleezhang.github.io
 This is my personal website! 
 
+# TODO
+- Refactor
+    - Separate header and footer
+- Modification for mobile device compatibility 
+- 404 design
+- JS animations !! 
+- Contact tweaks 
+    - finalize button designs
+- Project tweaks
+- Organize all html and css into global and local
+
 # Style Guide
 ** COLORS **
 General: purple, cream, green, blue, pink, yellow
@@ -56,30 +67,3 @@ Tags used include:
 - The header contains the navigation bar, which is formatted as an unordered list (ul) -- this is a nicer way to format things
 
 * Padding syntax: top right bottom left OR top right/left bottom OR top/bottom right/left OR top/bottom/right/left
-
-
-
-
-# In Progress
-* High priority 
-- About
-- Fun!
-- Finalize project tile image-description fade
-- Linking pages together
-
-* Mid priority
-- Modification for mobile device compatibility 
-- Prev and next page arrows
-
-* Low priorty
-- Organize files
-- 404 design
-- JS animations !! 
-- Homepage tweaks
-    - Smooth transition when squashing home image
-    - Project grid that rotates ?
-    - "+" link under grid and organize link underline code
-- Contact tweaks 
-    - finalize button designs
-- Project tweaks
-- Organize all html and css into global and local
