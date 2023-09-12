@@ -31,7 +31,7 @@
 /* TEXTS */ 
 body, html {
     margin: 0;
-    background: #fcfaf8; 
+    background: #fefdfa; 
     color: #232320;
     font-family: Avant-Garde-Gothic, Helvetica, Arial, sans-serif; /* font to use (in order of priority) */
     letter-spacing: 0.15em;
@@ -58,6 +58,7 @@ h3 {
     line-height: 150%;
 }
 
+/* h4 is really just h3 but light */
 h4 {
     color:#232320;
     font-family: Avant-Garde-Gothic-W, Helvetica, Arial, sans-serif;
@@ -72,8 +73,12 @@ a {
     text-decoration: none;
 }
 a:hover {
-    color: #FF8B97; /* Set the link color on hover */
+    color: #e4ccfa; /* Set the link color on hover */
   }
+
+
+
+
 
 /* IMAGES */
 .profile-image {
@@ -156,7 +161,7 @@ a:hover {
 /* HEADER */
 header {
     display: block;         /* a "block" element starts on a new line and takes up the available screen width */
-    background: #fefaf6;  /* bg color is needed because otherwise, the header is transparent */
+    background: #fefdfa;  /* bg color is needed because otherwise, the header is transparent */
     z-index: 2000;          /* a higher z index means this element is placed farther in front onscreen */
 }
 
@@ -247,9 +252,8 @@ header {
     /* padding: 3em; */
     position: relative;
     display: inline-block; /* used to be block */ 
-    border-radius: 20px;         /* defines radius for tile's rounded edges */
     text-decoration: none;
-    transition: all .3s ease-in-out;        /* transition speed, with ease for smoothness */
+    transition: all .1s ease-in-out;        /* transition speed, with ease for smoothness */
     /* height: max-content; */
 }
 @media (max-width: 1130px) { 
@@ -271,10 +275,7 @@ header {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 20px;
 }
-
-
 
 .project-tile__content-box {
     float: left;
@@ -284,7 +285,6 @@ header {
 
 .project-tile__category {
     display: inline-block;
-    font-family: ITC-Avant-Garde-Gothic, Helvetica, Arial, sans-serif;
     font-size: 12px;
     text-align: left;
     text-transform: uppercase;
@@ -295,7 +295,6 @@ header {
 
 .project-tile__languages {
     display: inline-block;
-    font-family: ITC-Avant-Garde-Gothic, Helvetica, Arial, sans-serif;
     font-size: 12px;
     text-align: right;
     text-transform: upper;
@@ -309,7 +308,6 @@ header {
     margin-bottom: 1em;
     display: block;
     text-align: left;
-    font-family: Ghibli, Playfair Display, serif;
     font-size: 30px;
     letter-spacing: 1px;
 }
@@ -332,26 +330,14 @@ header {
 } 
 
 .project-tile--proj1:hover {
-    background: linear-gradient(15.03deg,#8DC971 .5%,rgba(230, 255, 205, 0) 80.89%),#ADE4FF;
+    background: white;
     color: #4b3235;
-}
-.project-tile--proj2:hover {
-    background: linear-gradient(180.14deg,#ADBBFF .12%,rgba(20,44,105,0) 70.01%),#4F5C7A;
-    color: #ffffff;
-}
-/* temp fix: just changed h4 color separately on hover... todo: figure out how to change it more smoothly */
-.project-tile--proj2:hover h4{
-    color: #ffffff;
-}
-.project-tile--proj3:hover {
-    background: linear-gradient(39.4deg,#FAEEAA 0.5%,rgba(182,160,234,0) 48.21%),#EEDAFF;
-    color: #150042;
 }
 
 .button-link {
     display: inline-block;
-    padding: 0.2em;
-    border-radius: 20px;
+    padding: 0.5em;
+    border-radius: 15px;
     background: white;
     text-decoration: none;
 }
@@ -391,9 +377,25 @@ footer {
     }
 }
 
+.mrworldwide {
+    opacity: 0;
+    animation: textAnimation 6s infinite; /* must be 2x the value of the script.js animation */
+}
+@keyframes textAnimation {
+    0%, 100% {
+        opacity: 0;
+    }
+    25%, 75% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
 .typewriter::after {
     content: "|";
-    color: #FF8B97;
+    color: #e4ccfa;
     animation: typewriter 1s infinite step-start;
 }
 @keyframes typewriter {
@@ -418,7 +420,7 @@ footer {
     display: block;
     z-index: 5;
     content: '';
-    background:#FF8B97;
+    background:#e4ccfa;
     opacity: 0;
     transform: translate3d(0, 5px, 0);
     transition: all .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -442,8 +444,8 @@ footer {
     width: 50%;
     height: 30px;
     padding: 12px 15px;
-    font-size: 18px;
-    border: 1.5px dashed #FF8B97;
+    font-size: 16px;
+    border: 1.5px dashed #e4ccfa;
     border-radius: 20px;
     /* background: transparent; */
  }
@@ -466,71 +468,11 @@ footer {
     font-size: 17px;
     border-color: transparent;
     border-radius: 20px;
-    background: pink;
+    background: #EEDAFF;
     opacity: 0.8;
 
  }
 
  .contact-form__submit:hover {
-    background: #FF8B97;
+    background: #e4ccfa;
  }
-
-/* 
-.card {
-    position: absolute;
-    width: 450px;
-    height: 225px;
-    padding: 25px;
-    padding-top: 0;
-    padding-bottom: 0;
-    left: 50%;
-    top: 67.5px;
-    margin-left: -250px;
-    background: #E9E2D0;
-    box-shadow: -20px 0 35px -25px black, 20px 0 35px -25px black;
-    z-index: 5;
-}
-  
-.card img {
-    width: 150px;
-    float: left;
-    border-radius: 5px;
-    margin-right: 20px;
-    -webkit-filter: sepia(1);
-    -moz-filter: sepia(1);
-    filter: sepia(1);
-}
-  
-.card h2 {
-    font-family: courier;
-    color: #333;
-    margin: 0 auto;
-    padding: 0;
-    font-size: 15pt;
-}
-.card p {
-    font-family: courier;
-    color: #555;
-    font-size: 13px;
-  }
-  
-.card span {
-    font-family: courier;
-  }
-
-  .left {
-    left: 25px;
-  }
-  
-  .right {
-    right: 25px;
-  }
-  
-  .center {
-    text-align: center;
-  }
-  
-  .bottom {
-    position: absolute;
-    bottom: 25px;
-  } */

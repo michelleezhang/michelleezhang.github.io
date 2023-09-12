@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="This is Michelle's webpage. Click if you dare.">
-    <meta name="keywords" content="Michelle Zhang computer science chemistry design Chicago Northwestern">
+    <meta name="description" content="This is Michelle's webpage.">
+    <meta name="keywords" content="Michelle Zhang computer science chemistry Northwestern">
     
-    <title> projects </title>
+    <title> michelle zhang | projects </title>
 
     <link rel="preload" href="fonts/GHIBLI.otf" type="font/otf" as="font" crossorigin="anonymous">
     <link rel="preload" href="fonts/ITCAGGothic/ITC-Avant-Garde-Gothic-LT-Book.ttf" type="truetype" as="font" crossorigin="anonymous">
@@ -38,9 +38,6 @@
                 <li class="nav-list__item flexbox__item"> 
                     <a class="nav-list__link underline-link nav-list__link--p" href="projects.html">Projects</a> 
                 </li>
-                <!-- <li class="nav-list__item flexbox__item"> 
-                    <a class="nav-list__link underline-link nav-list__link--f" href="fun.html">Fun</a> 
-                </li> -->
                 <li class="nav-list__item flexbox__item"> 
                     <a class="nav-list__link underline-link nav-list__link--a" href="about.html">About</a> 
                 </li>
@@ -87,9 +84,25 @@
         <div class="flexbox__block">
             <div class="tile-grid">
 
-                <div class="project-tile project-tile--proj3">
+                <!-- TILE -->
+                <div class="project-tile project-tile--proj1">
                     <div class="project-tile__content-box">
-                        
+                        <span class="project-tile__category">CS | Robotics</span> 
+                        <!-- <span class="project-tile__languages">Python</span> -->
+                        <span class="project-tile__title"> Swarm Simulator </span>
+                        <div class="project-tile__text">
+                            <h4> 
+                                This is a research simulator for swarm robotics. It uses client-server architecture with asynchronous socket communication. It can be used to run algorithms like flocking and grain separation. 
+                            </h4>
+                        </div>
+                        <a class="button-link" href="https://github.com/michelleezhang/swarm_simulation"> View code </a>
+                        <img class="project-tile__image" src="images/projects/swarm.png">
+                    </div>
+                </div>  
+
+                <!-- TILE -->
+                <div class="project-tile project-tile--proj1">
+                    <div class="project-tile__content-box">
                         
                         <span class="project-tile__category">CS | Robotics</span> 
                         <!-- <span class="project-tile__languages">Python</span> -->
@@ -97,82 +110,66 @@
 
                         <div class="project-tile__text">
                             <h4> 
-                                This project implemented simulated evolution of 3D rigid robots, inspired by real life evolution of biological organisms. 
-                                Robots were generated using a branching algorithm. Evolution was implemented using a parallel hill climber algorithm with random mutation. 
+                                This is a simulator for 3D robot evolution, using a parallel hill climber algorithm with random mutation. 
+                                Robots are generated using a branching algorithm. 
                             </h4>
                         </div>
-
                         <a class="button-link" href="https://youtu.be/WvRU43EQkz8"> View media </a>
                         <a class="button-link" href="https://github.com/michelleezhang/ludobots"> View code </a>
-                    
-                        <img class="project-tile__image" src="placeholderImages/whitesquare.png">
+                        <img class="project-tile__image" src="images/projects/ludobots.png">
                     </div>
                 </div>  
 
-                <div class="project-tile project-tile--proj3">
-                    <div class="project-tile__content-box">
-                        
-                        
-                        <span class="project-tile__category">CS | Robotics</span> 
-                        <!-- <span class="project-tile__languages">Python</span> -->
-                        <span class="project-tile__title"> Swarm Simulator </span>
-
-                        <div class="project-tile__text">
-                            <h4> 
-                                This is a research simulator for swarm robots. It uses client-server architecture with socket communication to implement swarm algorithms, including Reynolds flocking and granular convection separation. 
-                            </h4>
-                        </div>
-
-                        <a class="button-link" href="https://github.com/michelleezhang/swarm_simulation"> View code </a>
-                    
-                        <img class="project-tile__image" src="placeholderImages/whitesquare.png">
-                    </div>
-                </div>  
-
-                <div class="project-tile project-tile--proj3">
-                    <div class="project-tile__content-box">
-                        
-                        
-                        <span class="project-tile__category">CS | Data Privacy</span> 
-                        <!-- <span class="project-tile__languages">Python</span> -->
-                        <span class="project-tile__title"> Differentially Private LogReg </span>
-
-                        <div class="project-tile__text">
-                            <h4> 
-                                This is a collection of differentially private logistic regression classifiers.
-                            </h4>
-                        </div>
-
-                        <a class="button-link" href="https://github.com/michelleezhang/dp-classifier"> View code </a>
-                    
-                        <img class="project-tile__image" src="placeholderImages/whitesquare.png">
-                    </div>
-                </div>  
-
+                <!-- TILE -->
                 <div class="project-tile project-tile--proj1">
                     <div class="project-tile__content-box">
-                        
-                        
+                        <span class="project-tile__category">CS | Deep Learning</span> 
+                        <!-- <span class="project-tile__languages">JavaScript | WebGL | HTML</span> -->
+                        <span class="project-tile__title"> Super Mario GAN and RL </span>
+                        <div class="project-tile__text">
+                            <h4> This is a CDCGAN and Double Deep Q-Network trained to generate and play original levels of Super Mario Bros 2.
+                                The GAN was trained on a subset of the VGLC and the RL agent was trained on GAN output.
+                            </h4>
+                        </div>
+                        <a class="button-link" href="https://github.com/michelleezhang/project-nintendogs"> View code </a>
+                        <img class="project-tile__image" src="images/projects/mario.png">
+                    </div>
+                </div>    
+
+                <!-- TILE -->
+                <div class="project-tile project-tile--proj1">
+                    <div class="project-tile__content-box">
+                        <span class="project-tile__category">CS | Cloud Architecture </span> 
+                        <!-- <span class="project-tile__languages">JavaScript | WebGL | HTML</span> -->
+                        <span class="project-tile__title"> AWS Garbage Classifier </span>
+                        <div class="project-tile__text">
+                            <h4> This is a web service where users can upload an image of a garbage item and see whether or not the item is recyclable.
+                                It uses AWS and consists of a client, an EC2 server, an S3 bucket, and a Lambda function that triggers a Tensorflow model.  
+                            </h4>
+                        </div>
+                        <a class="button-link" href="https://github.com/michelleezhang/garbage-sorter"> View code </a>
+                        <img class="project-tile__image" src="images/projects/gc.png">
+                    </div>
+                </div>    
+
+                <!-- TILE -->
+                <div class="project-tile project-tile--proj1">
+                    <div class="project-tile__content-box">
                         <span class="project-tile__category">CS | Graphics</span> 
                         <!-- <span class="project-tile__languages">JavaScript | WebGL | HTML</span> -->
                         <span class="project-tile__title"> Project Clownfish </span>
-
                         <div class="project-tile__text">
                             <h4> This is an animated, moving assembly of 3D objects
-                                with adjustable camera angle, color, lighting, material, and more!
+                                with adjustable camera angle, color, lighting, and material.
                             </h4>
                         </div>
-
                         <a class="button-link" href="https://michelleezhang.github.io/Graphics-Project-Clownfish/"> View live </a>
-                    
                         <a class="button-link" href="https://www.github.com/michelleezhang/graphics-project-clownfish/"> View code </a>
-                       
-
-
-                        <img class="project-tile__image" src="placeholderImages/whitesquare.png">
+                        <img class="project-tile__image" src="images/projects/graphics.png">
                     </div>
-                </div>     
-
+                </div>  
+                
+                
             </div>
         </div>
     </section>
