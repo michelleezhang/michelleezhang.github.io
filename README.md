@@ -7,33 +7,20 @@ This is my personal website!
 - Modification for mobile device compatibility 
 - 404 design
 - JS animations !! 
-- Contact tweaks 
-    - finalize button designs
+- Contact tweaks -> submit button font, make sure form clears on submit
 - Project tweaks
 - Organize all html and css into global and local
 
 # Style Guide
 ** COLORS **
-General: purple, cream, green, blue, pink, yellow
-* Background
-- Cream:
-* Text
-- "Black": #232320
-- "White": 
-* Hyperlink effects
-- Sheeta (pink): #FF8B97  (may be changed)
-* Project tile gradient
-- Castle in the Sky (bright green): #8DC971
-- Sen to Chihiro (bright blue): #ADE4FF
-- Sophie in the Rain (dark blue): #4F5C7A
-- Haku (bright blue-purple): #ADBBFF
-- Cat Eyes (light yellow): #FAEEAA
-- Chihiro (bright lavender): #EEDAFF
+Cream: #fefdfa
+Black: #232320
+Purple: #e4ccfa
+Purple (light): #EEDAFF
 
 ** FONTS **
 * Titles: Ghibli by Eyad Al-Samman
 * Body: ITC Avant Garde Gothic LT (Book, Demi, Extra Light)
-
 
 # Conventions
 ** NAMING **

@@ -1,5 +1,5 @@
 const textElement = document.getElementById("changing-text");
-const texts = ["salut! moi, c'est michelle.", // French
+const texts = ["salut! j'suis michelle.", // French
                "你好! 我叫 米歇尔.", // Chinese (ni hao, wo jiao)
                "szia! michelle vagyok.", // Hungarian
                "¡hola! soy michelle.", // Spanish
@@ -22,3 +22,8 @@ function changeText() {
 }
 
 setInterval(changeText, 3000); // Change text every 2 seconds (2000 milliseconds)
+
+
+function clearForm() {
+   document.getElementById("contact-form").reset();
+}
