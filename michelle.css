@@ -467,13 +467,13 @@ footer {
 
  .contact-form__submit {
     margin: 15px auto;
-    padding: 30px;
+    padding: 25px;
     width: 25%;
     display: block;
     font-family: Avant-Garde-Gothic-W, Helvetica, Arial, sans-serif;
-    font-size: 15px;
+    font-size: 100%;
     border-color: transparent;
-    border-radius: 20px;
+    border-radius: 16px;
     background: #eedaff;
     opacity: 0.8;
 
