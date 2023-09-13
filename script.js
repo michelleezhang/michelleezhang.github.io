@@ -1,3 +1,4 @@
+// LANGUAGE TITLE ROTATION
 const textElement = document.getElementById("changing-text");
 const texts = ["salut! j'suis michelle.", // French
                "你好! 我叫 米歇尔.", // Chinese (ni hao, wo jiao)
@@ -13,7 +14,7 @@ const texts = ["salut! j'suis michelle.", // French
             //    "hej! jeg er michelle.", // Danish
             //    "안녕! 저는 미셸이에요.", // Korean
                "hi! i'm michelle."
-            ]; // Add the text you want to cycle through
+            ]; 
 let currentIndex = 0;
 
 function changeText() {
@@ -21,9 +22,44 @@ function changeText() {
     currentIndex = (currentIndex + 1) % texts.length;
 }
 
-setInterval(changeText, 3000); // Change text every 2 seconds (2000 milliseconds)
+setInterval(changeText, 5000); // Change text every 2 seconds (2000 milliseconds)
 
 
-function clearForm() {
-   document.getElementById("contact-form").reset();
-}
+// CONTACT FORM -- clears form after submission
+document.addEventListener('DOMContentLoaded', function() {
+   const form = document.getElementById('contact-form');
+
+   form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the form from submitting normally
+      
+      // Serialize the form data (you may need to adjust this based on your form structure)
+      const formData = new FormData(form);
+      const formDataObject = {};
+      formData.forEach((value, key) => {
+         formDataObject[key] = value;
+      });
+      
+      // Send the form data to Formspree
+      fetch('https://formspree.io/f/mjvzgkeo', {
+         method: 'POST',
+         body: JSON.stringify(formDataObject),
+         headers: {
+               'Content-Type': 'application/json'
+         }
+      })
+      .then(response => {
+         if (response.ok) {
+               // Form submission was successful, reset the form
+               form.reset();
+               alert('Form submitted successfully!');
+         } else {
+               // Handle errors or failed submissions here
+               alert('Form submission failed.');
+         }
+      })
+      .catch(error => {
+         // Handle network or other errors here
+         alert('An error occurred while submitting the form.');
+      });
+   });
+});

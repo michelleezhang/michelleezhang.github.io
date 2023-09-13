@@ -55,6 +55,7 @@ h2 {
 
 h3 {
     letter-spacing: 0.1em;
+    font-size: 1.5em;
     line-height: 150%;
 }
 
@@ -116,7 +117,7 @@ a:hover {
  .big-tile {
     margin: 0 auto;
     max-width: 90%;
-    padding-top: 235px;
+    padding-top: 115px;
     position: relative;
     overflow: visible; /* used to be hidden */
 }
@@ -183,6 +184,12 @@ header {
     overflow: hidden; 
 }
 
+@media (max-width: 500px) { 
+    .nav-list__item {
+        padding-top: 8em; /* move nav bar items down (below logo) if the screen is compressed (only happens on mobile devices) */
+    }
+}
+
 .nav-list__link {
     padding: 1.5em 0.75em;
     display: block;
@@ -220,6 +227,13 @@ header {
     position: absolute;
     left: 50%;
 }
+/* move logo if screen is too compressed */
+@media (max-width: 670px) { 
+    .item__center {
+        left: 65%; 
+    }
+}
+
 /* used to space apart the social buttons */
 .item__auto-left-margin {
     margin-left: auto!important;        /* important will override existing styling for this property */
@@ -311,6 +325,12 @@ header {
     font-size: 30px;
     letter-spacing: 1px;
 }
+/* realigns title if screen is compressed */
+@media (max-width: 1300px) { 
+    .project-tile__title {
+        text-align: center;
+    }
+}
 
 .project-tile__text {
     opacity: 0;
@@ -343,9 +363,6 @@ header {
 }
 
 
-
-
-
 /* FOOTER */
 footer {
     position: relative;
@@ -371,25 +388,17 @@ footer {
 .logo {
     enable-background: new 0 0 502 502;
 }
-@media (max-width: 800px) {     
-    .logo {
-        transform: scale(0);        /* hides logo when screen is too small */
-    }
-}
 
 .mrworldwide {
     opacity: 0;
-    animation: textAnimation 6s infinite; /* must be 2x the value of the script.js animation */
+    animation: textAnimation 10s infinite; /* must be 2x the value of the script.js animation */
 }
 @keyframes textAnimation {
-    0%, 100% {
+    0%, 50%, 100% {
         opacity: 0;
     }
     25%, 75% {
         opacity: 1;
-    }
-    50% {
-        opacity: 0;
     }
 }
 
@@ -444,31 +453,26 @@ footer {
     width: 50%;
     height: 30px;
     padding: 12px 15px;
+    font-family: Avant-Garde-Gothic-W, Helvetica, Arial, sans-serif;
     font-size: 16px;
     border: 1.5px dashed #e4ccfa;
     border-radius: 20px;
-    /* background: transparent; */
  }
 
  .contact-form__message {
-    font-size: 16px;
-    display: block;
-    box-sizing: border-box;
-    width: 53%;
-    min-height: 110px;
-    margin: 15px auto;
-    resize: vertical;
-    outline: none;
+    min-height: 100px;
  }
 
  .contact-form__submit {
     margin: 15px auto;
     padding: 30px;
     width: 25%;
+    display: block;
+    font-family: Avant-Garde-Gothic-W, Helvetica, Arial, sans-serif;
     font-size: 17px;
     border-color: transparent;
     border-radius: 20px;
-    background: #EEDAFF;
+    background: #eedaff;
     opacity: 0.8;
 
  }
