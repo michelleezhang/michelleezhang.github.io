@@ -232,6 +232,10 @@ header {
     left: 50%;
 }
 
+.mobile_logo {
+    position: absolute;
+    right: 50%;
+}
 /* used to space apart the social buttons */
 .item__auto-left-margin {
     margin-left: auto!important;        /* important will override existing styling for this property */
