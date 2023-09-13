@@ -186,7 +186,7 @@ header {
 
 @media (max-width: 670px) { 
     .nav-list__item {
-        padding-top: 8em; /* move nav bar items down (below logo) if the screen is compressed (only happens on mobile devices) */
+        padding-top: 6em; /* move nav bar items down (below logo) if the screen is compressed (only happens on mobile devices) */
     }
 }
 
@@ -227,12 +227,6 @@ header {
     position: absolute;
     left: 50%;
 }
-/* move logo if screen is too compressed
-@media (max-width: 670px) { 
-    .item__center {
-        left: 65%; 
-    }
-} */
 
 /* used to space apart the social buttons */
 .item__auto-left-margin {
