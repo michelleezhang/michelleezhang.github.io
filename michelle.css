@@ -121,7 +121,11 @@ a:hover {
     position: relative;
     overflow: visible; /* used to be hidden */
 }
-
+@media (max-width: 670px) { 
+    .flexbox__block {
+        padding-top: 3em; 
+    }
+}
 
 /* for two column layouts */
 
@@ -131,7 +135,7 @@ a:hover {
     max-width: 100%;
     margin: 0 auto;
 } 
-@media (min-width: 1300px) {      /* USES MIN WIDTH -- if the screen's width hits 1000px or bigger, move to the side*/
+@media (min-width: 1300px) {      /* USES MIN WIDTH -- if the screen's width hits 1200px or bigger, move to the side*/
     .big-tile__box {
         display: flex;
         align-items: flex-start;
@@ -186,7 +190,7 @@ header {
 
 @media (max-width: 670px) { 
     .nav-list__item {
-        padding-top: 6em; /* move nav bar items down (below logo) if the screen is compressed (only happens on mobile devices) */
+        padding-top: 5em; /* move nav bar items down (below logo) if the screen is compressed (only happens on mobile devices) */
     }
 }
 
