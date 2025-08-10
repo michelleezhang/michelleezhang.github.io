@@ -1,24 +1,24 @@
-# michelleezhang.github.io
+# Porfolio Website 
 This is my personal website! 
 
-# TODO
-- Refactor
-    - Separate header and footer
-- Organize all html and css into global and local
+# Styling
+## Colors
+* <b>Cream</b>: #fefdfa
+* <b>Black</b>: #232320
+* <b>Lavender</b>: #e4ccfa
+* <b>Lilac</b>: #eedaff
 
-# Style Guide
-** COLORS **
-* Cream: #fefdfa
-* Black: #232320
-* Purple: #e4ccfa
-* Purple (light): #eedaff
-
-** FONTS **
-* Titles: Ghibli by Eyad Al-Samman
-* Body: ITC Avant Garde Gothic LT (Book, Demi, Extra Light)
+## Fonts
+* <b>Pixelify Sans</b> by Stefie Justprince
+    * <b>Handjet</b> by Rosetta, David Březina (ar, fa) 
+    * <b>DotGothic16</b> by Fontworks Inc. (ja)
+    * <b>Sarala</b> by Andres Torresi (hi)
+    * <b>Gugi</b> by TAE System & Typefaces Co. (ko)
+    * <b>ZCOOL KuaiLe</b> by Liu Bingke, Yang Kang, Wu Shaojie (zh)
+* <b>Noto Sans</b> by Google
 
 # Conventions
-** NAMING **
+## Names
 * Class: class-name
 * Elements that depend on a class: class-name__dependant-name
 * Modifier that change the style of a class: class-name--modifier-name
