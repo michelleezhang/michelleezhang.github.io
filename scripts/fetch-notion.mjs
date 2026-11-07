@@ -47,7 +47,7 @@ function richToHtml(arr = []) {
       if (a.italic) s = `<em>${s}</em>`;
       if (a.strikethrough) s = `<s>${s}</s>`;
       if (a.underline) s = `<u>${s}</u>`;
-      if (t.href) s = `<a href="${esc(t.href)}">${s}</a>`;
+      if (t.href) s = `<a href="${esc(t.href)}" target="_blank">${s}</a>`;
       return s;
     })
     .join("");
