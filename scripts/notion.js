@@ -8,7 +8,8 @@ fetch("data/content.json")
       if (!item) return; // Not found or unpublished, so keep the fallback text
 
       const field = el.dataset.field || "content"; // content, name, or type
-      el.textContent = item[field];
+      if (field === "content") el.innerHTML = item.content; // formatted HTML
+      else el.textContent = item[field]; 
     });
 
     // Fill images from the Media column
