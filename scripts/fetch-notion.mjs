@@ -34,6 +34,25 @@ async function queryAll() {
 
 const text = (arr = []) => arr.map((t) => t.plain_text).join("");
 
+const esc = (s) =>
+  s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
+function richToHtml(arr = []) {
+  return arr
+    .map((t) => {
+      let s = esc(t.plain_text).replace(/\n/g, "<br>");
+      const a = t.annotations || {};
+      if (a.code) s = `<code>${s}</code>`;
+      if (a.bold) s = `<strong>${s}</strong>`;
+      if (a.italic) s = `<em>${s}</em>`;
+      if (a.strikethrough) s = `<s>${s}</s>`;
+      if (a.underline) s = `<u>${s}</u>`;
+      if (t.href) s = `<a href="${esc(t.href)}">${s}</a>`;
+      return s;
+    })
+    .join("");
+}
+
 function value(prop) {
   switch (prop?.type) {
     case "title": return text(prop.title);
@@ -70,7 +89,7 @@ for (const p of pages) {
     name: value(p.properties.Name),
     id: value(p.properties.ID),
     type: value(p.properties.Type),
-    content: value(p.properties.Content),
+    content: richToHtml(p.properties.Content?.rich_text), //value(p.properties.Content),
     media: await saveMedia(p),
   });
 }
