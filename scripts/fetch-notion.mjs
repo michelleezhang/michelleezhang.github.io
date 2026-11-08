@@ -37,20 +37,73 @@ const text = (arr = []) => arr.map((t) => t.plain_text).join("");
 const esc = (s) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
+function safeHref(href) {
+  try {
+    const u = new URL(href);
+    return ["http:", "https:", "mailto:", "tel:"].includes(u.protocol) ? href : null;
+  } catch {
+    return null;
+  }
+}
+
+function renderFragment(t, text) {
+  let s = esc(text);
+  const a = t.annotations || {};
+  if (a.code) s = `<code>${s}</code>`;
+  if (a.bold) s = `<strong>${s}</strong>`;
+  if (a.italic) s = `<em>${s}</em>`;
+  if (a.strikethrough) s = `<s>${s}</s>`;
+  if (a.underline) s = `<u>${s}</u>`;
+  if (t.href) s = `<a href="${esc(t.href)}">${s}</a>`;
+  return s;
+}
+
 function richToHtml(arr = []) {
-  return arr
-    .map((t) => {
-      let s = esc(t.plain_text).replace(/\n/g, "<br>");
-      const a = t.annotations || {};
-      if (a.code) s = `<code>${s}</code>`;
-      if (a.bold) s = `<strong>${s}</strong>`;
-      if (a.italic) s = `<em>${s}</em>`;
-      if (a.strikethrough) s = `<s>${s}</s>`;
-      if (a.underline) s = `<u>${s}</u>`;
-      if (t.href) s = `<a href="${esc(t.href)}" target="_blank">${s}</a>`;
-      return s;
-    })
-    .join("");
+  // Split into lines
+  const lines = [[]];
+  for (const t of arr) {
+    t.plain_text.split("\n").forEach((part, i) => {
+      if (i > 0) lines.push([]);
+      if (part) lines[lines.length - 1].push({ t, part });
+    });
+  }
+
+  // Render lines, with list handling
+  let out = "";
+  let list = null;       // "ul", "ol", or null
+  let prevText = false;  // was the previous line normal text?
+
+  for (const line of lines) {
+    const first = line[0]?.part ?? "";
+    let kind = null;
+    if (/^\s*[-*•]\s+/.test(first)) kind = "ul";
+    else if (/^\s*\d+[.)]\s+/.test(first)) kind = "ol";
+
+    if (kind) {
+      line[0] = { ...line[0], part: first.replace(/^\s*(?:[-*•]|\d+[.)])\s+/, "") };
+    }
+    const html = line
+      .filter((f) => f.part)
+      .map((f) => renderFragment(f.t, f.part))
+      .join("");
+
+    if (kind) {
+      if (list !== kind) {
+        if (list) out += `</${list}>`;
+        out += `<${kind}>`;
+        list = kind;
+      }
+      out += `<li>${html}</li>`;
+      prevText = false;
+    } else {
+      if (list) { out += `</${list}>`; list = null; }
+      if (prevText) out += "<br>";
+      out += html;
+      prevText = true;
+    }
+  }
+  if (list) out += `</${list}>`;
+  return out;
 }
 
 function value(prop) {
@@ -60,6 +113,7 @@ function value(prop) {
     case "number": return prop.number;
     case "select": return prop.select?.name ?? null;
     case "checkbox": return prop.checkbox;
+    case "url": return prop.url ? safeHref(prop.url) : null;
     case "unique_id": return `${prop.unique_id.prefix ?? ""}${prop.unique_id.number}`;
     default: return null;
   }
@@ -91,8 +145,19 @@ for (const p of pages) {
     type: value(p.properties.Type),
     content: richToHtml(p.properties.Content?.rich_text), //value(p.properties.Content),
     media: await saveMedia(p),
+    category: value(p.properties.Category),
+    order: value(p.properties.Order),
+    live: value(p.properties.Live),
+    code: value(p.properties.Code), 
   });
 }
+
+// Sort by Order (rows with no Order go last), then by name
+items.sort((a, b) => {
+  const ao = a.order ?? Number.MAX_SAFE_INTEGER;
+  const bo = b.order ?? Number.MAX_SAFE_INTEGER;
+  return ao - bo || (a.name || "").localeCompare(b.name || "");
+});
 
 await fs.mkdir("data", { recursive: true });
 await fs.writeFile("data/content.json", JSON.stringify(items, null, 2));

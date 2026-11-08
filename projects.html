@@ -80,94 +80,7 @@
     <!-- project grid -->
     <section class="big-tile">
         <div class="flexbox__block">
-            <div class="tile-grid">
-                <!-- TILE -->
-                <div class="project-tile project-tile--proj1">
-                    <div class="project-tile__content-box">
-                        <span class="project-tile__category">CS | Robotics</span> 
-                        <!-- <span class="project-tile__languages">Python</span> -->
-                        <span class="project-tile__title"> Swarm Simulator </span>
-                        <div class="project-tile__text">
-                            <p> 
-                                This is a research simulator for swarm robotics. It uses client-server architecture with asynchronous socket communication. It can be used to run algorithms like flocking and grain separation. 
-                            </p>
-                        </div>
-                        <a class="button-link" href="https://github.com/michelleezhang/swarm_simulation"> View code </a>
-                        <img class="project-tile__image" src="images/projects/swarm.png">
-                    </div>
-                </div>  
-
-                <!-- TILE -->
-                <div class="project-tile project-tile--proj1">
-                    <div class="project-tile__content-box">
-                        
-                        <span class="project-tile__category">CS | Robotics</span> 
-                        <!-- <span class="project-tile__languages">Python</span> -->
-                        <span class="project-tile__title"> Ludobots </span>
-
-                        <div class="project-tile__text">
-                            <p> 
-                                This is a simulator for 3D robot evolution, using a parallel hill climber algorithm with random mutation. 
-                                Robots are generated using a branching algorithm. 
-                            </p>
-                        </div>
-                        <a class="button-link" href="https://youtu.be/WvRU43EQkz8"> View media </a>
-                        <a class="button-link" href="https://github.com/michelleezhang/ludobots"> View code </a>
-                        <img class="project-tile__image" src="images/projects/ludobots.png">
-                    </div>
-                </div>  
-
-                <!-- TILE -->
-                <div class="project-tile project-tile--proj1">
-                    <div class="project-tile__content-box">
-                        <span class="project-tile__category">CS | Deep Learning</span> 
-                        <!-- <span class="project-tile__languages">JavaScript | WebGL | HTML</span> -->
-                        <span class="project-tile__title"> Super Mario GAN and RL </span>
-                        <div class="project-tile__text">
-                            <p> This is a CDCGAN and Double Deep Q-Network trained to generate and play original levels of Super Mario Bros 2.
-                                The GAN was trained on a subset of the VGLC and the RL agent was trained on GAN output.
-                            </p>
-                        </div>
-                        <a class="button-link" href="https://github.com/michelleezhang/project-nintendogs"> View code </a>
-                        <img class="project-tile__image" src="images/projects/mario.png">
-                    </div>
-                </div>    
-
-                <!-- TILE -->
-                <div class="project-tile project-tile--proj1">
-                    <div class="project-tile__content-box">
-                        <span class="project-tile__category">CS | Cloud Architecture </span> 
-                        <!-- <span class="project-tile__languages">JavaScript | WebGL | HTML</span> -->
-                        <span class="project-tile__title"> AWS Garbage Classifier </span>
-                        <div class="project-tile__text">
-                            <p> This is a web service where users can upload an image of a garbage item and see whether or not the item is recyclable.
-                                It uses AWS and consists of a client, an EC2 server, an S3 bucket, and a Lambda function that triggers a Tensorflow model.  
-                            </p>
-                        </div>
-                        <a class="button-link" href="https://github.com/michelleezhang/garbage-sorter"> View code </a>
-                        <img class="project-tile__image" src="images/projects/gc.png">
-                    </div>
-                </div>    
-
-                <!-- TILE -->
-                <div class="project-tile project-tile--proj1">
-                    <div class="project-tile__content-box">
-                        <span class="project-tile__category">CS | Graphics</span> 
-                        <!-- <span class="project-tile__languages">JavaScript | WebGL | HTML</span> -->
-                        <span class="project-tile__title"> Project Clownfish </span>
-                        <div class="project-tile__text">
-                            <p> This is an animated, moving assembly of 3D objects
-                                with adjustable camera angle, color, lighting, and material.
-                            </p>
-                        </div>
-                        <a class="button-link" href="https://michelleezhang.github.io/Graphics-Project-Clownfish/"> View live </a>
-                        <a class="button-link" href="https://www.github.com/michelleezhang/graphics-project-clownfish/"> View code </a>
-                        <img class="project-tile__image" src="images/projects/graphics.png">
-                    </div>
-                </div>  
-                
-                
-            </div>
+            <div data-notion-projects></div>
         </div>
     </section>
 
@@ -180,6 +93,6 @@
         </div>
     </footer>
 </body>
-
+<script src="scripts/notion.js"></script>
 </html>
 
